@@ -393,94 +393,112 @@ import { CNavGroup, CNavItem, CNavTitle } from '@coreui/react'
  
   */
 const _nav = [
-  {
-    component: CNavItem,
-    name: 'Dashboard',
-    to: '/dashboard',
-    icon: <CIcon icon={cilSpeedometer} customClassName="nav-icon" />,
-    badge: {
-      color: 'info',
-      text: 'NEW',
-    },
-  },
+  // {
+  //   component: CNavItem,
+  //   name: 'Dashboard',
+  //   to: '/dashboard',
+  //   icon: <CIcon icon={cilSpeedometer} customClassName="nav-icon" />,
+  //   badge: {
+  //     color: 'info',
+  //     text: 'NEW',
+  //   },
+  // },
   {
     component: CNavTitle,
     name: 'Menu',
   },
-  {
-    component: CNavGroup,
-    name: 'Onboarding',
-    icon: <CIcon icon={cilStar} customClassName="nav-icon" />,
-    items: [
-      {
-        component: CNavItem,
-        name: 'New Spoke',
-        to: '/dashboard',
-      },
-      {
-        component: CNavItem,
-        name: 'New Team',
-        to: '/newteam',
-      },
-    ],
-  },
-  {
-    component: CNavGroup,
-    name: 'Manage',
-    icon: <CIcon icon={cilExternalLink} customClassName="nav-icon" />,
-    items: [
-      {
-        component: CNavItem,
-        name: 'User',
-        to: '/dashboard',
-      },
-      {
-        component: CNavItem,
-        name: 'Team',
-        to: '/dashboard',
-      },
-      {
-        component: CNavItem,
-        name: 'Pipeline',
-        to: '/pipeline',
-      },
-    ],
-  },
+  // {
+  //   component: CNavGroup,
+  //   name: 'Onboarding',
+  //   icon: <CIcon icon={cilStar} customClassName="nav-icon" />,
+  //   items: [
+  //     {
+  //       component: CNavItem,
+  //       name: 'New Spoke',
+  //       to: '/dashboard',
+  //     },
+  //     {
+  //       component: CNavItem,
+  //       name: 'New Team',
+  //       to: '/newteam',
+  //     },
+  //   ],
+  // },
+  // {
+  //   component: CNavGroup,
+  //   name: 'Manage',
+  //   icon: <CIcon icon={cilExternalLink} customClassName="nav-icon" />,
+  //   items: [
+  //     {
+  //       component: CNavItem,
+  //       name: 'User',
+  //       to: '/dashboard',
+  //     },
+  //     {
+  //       component: CNavItem,
+  //       name: 'Team',
+  //       to: '/dashboard',
+  //     },
+  //     {
+  //       component: CNavItem,
+  //       name: 'Pipeline',
+  //       to: '/pipeline',
+  //     },
+  //   ],
+  // },
   
   {
     component: CNavItem,
-    name: 'DataHub',
+    name: 'Dashboard',
     href: 'https://coreui.io/react/docs/templates/installation/',
     icon: <CIcon icon={cilDescription} customClassName="nav-icon" />,
   },
   {
     component: CNavItem,
-    name: 'Mage.ai',
+    name: 'Pipelines',
     href: 'https://coreui.io/react/docs/templates/installation/',
     icon: <CIcon icon={cilDescription} customClassName="nav-icon" />,
   },
   {
     component: CNavItem,
-    name: 'Docs',
-    href: 'https://pantherslabs.online/',
+    name: 'Jobs',
+    href: 'https://coreui.io/react/docs/templates/installation/',
     icon: <CIcon icon={cilDescription} customClassName="nav-icon" />,
   },
-  {
-    component: CNavItem,
-    name: 'Charts',
-    to: '/charts',
-    icon: <CIcon icon={cilChartPie} customClassName="nav-icon" />,
-  },
-  {
-    component: CNavItem,
-    name: 'Widgets',
-    to: '/widgets',
-    icon: <CIcon icon={cilCalculator} customClassName="nav-icon" />,
-    badge: {
-      color: 'info',
-      text: 'NEW',
-    },
-  },
+  // {
+  //   component: CNavItem,
+  //   name: 'DataHub',
+  //   href: 'https://coreui.io/react/docs/templates/installation/',
+  //   icon: <CIcon icon={cilDescription} customClassName="nav-icon" />,
+  // },
+  // {
+  //   component: CNavItem,
+  //   name: 'Mage.ai',
+  //   href: 'https://coreui.io/react/docs/templates/installation/',
+  //   icon: <CIcon icon={cilDescription} customClassName="nav-icon" />,
+  // },
+  // {
+  //   component: CNavItem,
+  //   name: 'Docs',
+  //   href: 'https://pantherslabs.online/',
+  //   icon: <CIcon icon={cilDescription} customClassName="nav-icon" />,
+  // },
+  // {
+  //   component: CNavItem,
+  //   name: 'Charts',
+  //   to: '/charts',
+  //   icon: <CIcon icon={cilChartPie} customClassName="nav-icon" />,
+  // },
+  // {
+  //   component: CNavItem,
+  //   name: 'Widgets',
+  //   to: '/widgets',
+  //   icon: <CIcon icon={cilCalculator} customClassName="nav-icon" />,
+  //   badge: {
+  //     color: 'info',
+  //     text: 'NEW',
+  //   },
+  // },
 ]
 
 export default _nav
