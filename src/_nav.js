@@ -446,23 +446,23 @@ const _nav = [
   //     },
   //   ],
   // },
-  
+
   {
     component: CNavItem,
     name: 'Dashboard',
-    href: 'https://coreui.io/react/docs/templates/installation/',
+    to: '/dashboard',
     icon: <CIcon icon={cilDescription} customClassName="nav-icon" />,
   },
   {
     component: CNavItem,
     name: 'Pipelines',
-    href: 'https://coreui.io/react/docs/templates/installation/',
+    to: '/createPipeline',
     icon: <CIcon icon={cilDescription} customClassName="nav-icon" />,
   },
   {
     component: CNavItem,
     name: 'Jobs',
-    href: 'https://coreui.io/react/docs/templates/installation/',
+    to: '/dashboard',
     icon: <CIcon icon={cilDescription} customClassName="nav-icon" />,
   },
   // {

@@ -1,7 +1,7 @@
 {
   "name": "@coreui/coreui-free-react-admin-template",
   "version": "5.4.0",
-  "description": "CoreUI Free React Admin Template",
+  "description": "Chimera",
   "homepage": ".",
   "bugs": {
     "url": "https://github.com/coreui/coreui-free-react-admin-template/issues"
@@ -28,7 +28,9 @@
     "@coreui/react": "^5.5.0",
     "@coreui/react-chartjs": "^3.0.0",
     "@coreui/utils": "^2.0.2",
+    "@monaco-editor/react": "^4.7.0",
     "@popperjs/core": "^2.11.8",
+    "@sqlrooms/sql-editor": "^0.12.0",
     "axios": "^1.7.9",
     "babel-loader": "^10.0.0",
     "chart.js": "^4.4.7",
@@ -53,6 +55,9 @@
     "webpack-merge": "^6.0.1"
   },
   "devDependencies": {
+    "@types/react": "^19.1.2",
+    "@types/react-dom": "^19.1.2",
+    "@types/react-router-dom": "^5.3.3",
     "autoprefixer": "^10.4.20",
     "eslint": "^9.20.1",
     "eslint-config-prettier": "^10.0.1",
@@ -62,6 +67,8 @@
     "globals": "^15.15.0",
     "postcss": "^8.5.2",
     "prettier": "3.5.1",
-    "sass": "^1.85.0"
+    "sass": "^1.85.0",
+    "ts-loader": "^9.5.2",
+    "typescript": "^5.8.3"
   }
 }

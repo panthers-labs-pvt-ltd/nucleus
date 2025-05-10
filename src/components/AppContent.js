@@ -11,18 +11,18 @@ const AppContent = () => {
       <Suspense fallback={<CSpinner color="primary" />}>
         <Routes>
           {routes.map((route, idx) => {
+            const Element = route.element
             return (
-              route.element && (
+              Element && (
                 <Route
                   key={idx}
                   path={route.path}
-                  exact={route.exact}
-                  name={route.name}
-                  element={<route.element />}
+                  element={<Element />}
                 />
               )
             )
           })}
+          {/* Redirect / to /login */}
           <Route path="/" element={<Navigate to="login" replace />} />
         </Routes>
       </Suspense>

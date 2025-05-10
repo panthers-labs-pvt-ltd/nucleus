@@ -3,92 +3,114 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { ModuleFederationPlugin } = require('webpack').container;
 
 module.exports = {
-    entry: './src/index.js', // Ensure entry is set to index.js
-    output: {
-        path: path.resolve(__dirname, 'build'),
-        filename: '[name].[contenthash].js',
-        publicPath: '/',
-    },
-    mode: 'development',
-    devServer: {
-        port: 3000,
-        historyApiFallback: true,
-        hot: true,
-    },
-    module: {
-        rules: [
-            {
-                test: /\.(js|jsx)$/,
-                exclude: /node_modules/,
-                use: {
-                    loader: 'babel-loader',
-                    options: {
-                        "presets": [
-                            [
-                                "@babel/preset-env",
-                                {
-                                    "useBuiltIns": "entry",
-                                    "corejs": 3,
-                                    "exclude": ["proposal-dynamic-import"]
-                                }
-                            ]
-                        ]
-                    },
-                },
+  entry: './src/index.js', // Entry point
+  output: {
+    path: path.resolve(__dirname, 'build'),
+    filename: '[name].[contenthash].js',
+    publicPath: '/',
+    clean: true, // optional: cleans old files from build folder
+  },
+  mode: 'development',
+  devServer: {
+    port: 3000,
+    historyApiFallback: true,
+    hot: true,
+    open: true, // optional: auto-open browser
+  },
+  module: {
+    rules: [
+      // TypeScript Loader
+      {
+        test: /\.tsx?$/,
+        use: [
+          {
+            loader: 'ts-loader',
+            options: {
+              transpileOnly: true, // Speed up build by skipping type checks
             },
-            {
-                test: /\.css$/,
-                use: ['style-loader', 'css-loader', 'postcss-loader'],
-            },
-            {
-                test: /\.(scss|sass)$/,
-                use: ['style-loader', 'css-loader', 'postcss-loader', 'sass-loader'],
-            },
-            {
-                test: /\.(png|jpe?g|gif|svg|webp)$/i, // Match image files
-                type: 'asset/resource', // Handles image files
-                generator: {
-                    filename: 'assets/images/[name][ext]', // Output path for images
-                },
-            },
+          },
         ],
-    },
-    plugins: [
-        new HtmlWebpackPlugin({
-            template: './public/index.html',
-            inject: true
-        }),
-        new ModuleFederationPlugin({
-            name: 'core_ui',
-            filename: 'remoteEntry.js',
-            exposes: {
-                './CoreUIApp': './src/App', // Expose the CoreUI application
-            },
-            shared: {
-                react: {
-                    singleton: true,
-                    requiredVersion: '^19.0.0',
-                    strictVersion: false, // Prevents exact version mismatches
-                    eager: false, // Ensure it's not eager loaded
+        exclude: /node_modules/,
+      },
+      // Babel Loader for JS/JSX
+      {
+        test: /\.(js|jsx)$/,
+        exclude: /node_modules/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: [
+              [
+                '@babel/preset-env',
+                {
+                  useBuiltIns: 'entry',
+                  corejs: 3,
+                  exclude: ['proposal-dynamic-import'],
                 },
-                'react-dom': {
-                    singleton: true,
-                    requiredVersion: '^19.0.0',
-                    strictVersion: false,
-                    eager: false,
-                },
-                'react-router-dom': {
-                    singleton: true,
-                    requiredVersion: '^7.1.5',
-                    eager: false,
-                },
-            },
-        }),
-    ],
-    resolve: {
-        extensions: ['.js', '.jsx', '.json'],
-        alias: {
-            src: path.resolve(__dirname, 'src/'),
+              ],
+              '@babel/preset-react', // 👈 Added this for JSX transformation
+            ],
+          },
         },
+      },
+      // CSS Loader
+      {
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader', 'postcss-loader'],
+      },
+      // SCSS/SASS Loader
+      {
+        test: /\.(scss|sass)$/,
+        use: ['style-loader', 'css-loader', 'postcss-loader', 'sass-loader'],
+      },
+      // Image Assets
+      {
+        test: /\.(png|jpe?g|gif|svg|webp)$/i,
+        type: 'asset/resource',
+        generator: {
+          filename: 'assets/images/[name][ext]', // Output path for images
+        },
+      },
+    ],
+  },
+  plugins: [
+    // Generates index.html
+    new HtmlWebpackPlugin({
+      template: './public/index.html',
+      inject: true,
+    }),
+    // Module Federation Setup
+    new ModuleFederationPlugin({
+      name: 'core_ui',
+      filename: 'remoteEntry.js',
+      exposes: {
+        './CoreUIApp': './src/App', // Expose main App
+      },
+      shared: {
+        react: {
+          singleton: true,
+          requiredVersion: '^19.0.0',
+          strictVersion: false,
+          eager: false,
+        },
+        'react-dom': {
+          singleton: true,
+          requiredVersion: '^19.0.0',
+          strictVersion: false,
+          eager: false,
+        },
+        'react-router-dom': {
+          singleton: true,
+          requiredVersion: '^7.1.5',
+          eager: false,
+        },
+      },
+    }),
+  ],
+  resolve: {
+    extensions: ['.tsx', '.ts', '.js', '.jsx', '.json'], // 👈 important
+    alias: {
+      src: path.resolve(__dirname, 'src/'), // Optional alias
     },
+  },
 };
