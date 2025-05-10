@@ -53,6 +53,7 @@ import avatar6 from 'src/assets/images/avatars/6.jpg'
 import WidgetsBrand from '../widgets/WidgetsBrand'
 import WidgetsDropdown from '../widgets/WidgetsDropdown'
 import MainChart from './MainChart'
+import DashboardHeader from '../../components/DashboardHeader';
 
 const Dashboard = () => {
   const progressExample = [
@@ -189,11 +190,12 @@ const Dashboard = () => {
 
 
   useEffect(() => {
-    Fn_GetPipeLineList()
+   // Fn_GetPipeLineList()
   }, [])
 
   return (
     <>
+      <DashboardHeader />
       <WidgetsDropdown className="mb-4" />
       <CCard className="mb-4">
         <CCardBody>
