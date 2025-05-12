@@ -53,10 +53,10 @@ const AppHeader = () => {
         </CHeaderToggler>
         <CHeaderNav className="d-none d-md-flex">
           <CNavItem>
-            <CDropdown dark as="li" variant="nav-item">
-              <CDropdownToggle color="secondary">Dropdown button</CDropdownToggle>
+            <CDropdown variant="outline">
+              <CDropdownToggle variant= 'outline' color="secondary" placeholder='Team'>Team 1</CDropdownToggle>
               <CDropdownMenu>
-                <CDropdownItem href="#">Action</CDropdownItem>
+                <CDropdownItem href="#">Team 1</CDropdownItem>
                 <CDropdownItem href="#">Another action</CDropdownItem>
                 <CDropdownItem href="#">Something else here</CDropdownItem>
               </CDropdownMenu>
@@ -64,21 +64,9 @@ const AppHeader = () => {
 
 
           </CNavItem>
-          <CNavItem>
-            <CNavLink to="/dashboard" as={NavLink}>
-              Today
-            </CNavLink>
-          </CNavItem>
-          <CNavItem>
-            <CNavLink to="/dashboard" as={NavLink}>
-              Last 7 Days
-            </CNavLink>
-          </CNavItem>
-          <CNavItem>
-            <CNavLink to="/dashboard" as={NavLink}>
-              Last 30 days
-            </CNavLink>
-          </CNavItem>
+          
+
+
           {/* <CNavItem>
             <CNavLink to="/dashboard" as={NavLink}>
               Dashboard
@@ -91,17 +79,7 @@ const AppHeader = () => {
             <CNavLink to="/dashboard">Settings</CNavLink>
           </CNavItem> */}
         </CHeaderNav>
-        <CHeaderNav className="ms-auto">
-          <CNavItem>
-
-          </CNavItem>
-          <CNavItem>
-
-          </CNavItem>
-          <CNavItem>
-
-          </CNavItem>
-        </CHeaderNav>
+        
         <CHeaderNav>
           <li className="nav-item py-1">
             <div className="vr h-100 mx-2 text-body text-opacity-75"></div>

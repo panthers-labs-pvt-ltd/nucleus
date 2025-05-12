@@ -22,7 +22,7 @@ import { useNavigate } from "react-router-dom";
 const Login = () => {
   const navigate = useNavigate();
   const Fn_GoToHomePage = () => {
-    navigate("/home");
+    navigate("/dashboard");
   }
 
   return (
