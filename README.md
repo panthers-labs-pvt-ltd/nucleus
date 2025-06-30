@@ -1,6 +1,9 @@
-# Data Value Chain UI
+# Nucleus
 
 
+Nucleus is the central user interface of the Chimera Data Ecosystem — built to unify access to data products, governance workflows, lineage insights, and orchestration tools. It serves both data consumers and stewards through a modular, intuitive design that simplifies complex data operations.
+
+With secure authentication, pipeline creation, and seamless navigation across integrated tools like DataHub, Temporal, and Grafana, Nucleus empowers users to govern, observe, and orchestrate data flows at scale — all from a single, streamlined interface.
 
 ## Getting started
 
