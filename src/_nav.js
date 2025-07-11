@@ -465,6 +465,12 @@ const _nav = [
     to: '/dashboard',
     icon: <CIcon icon={cilDescription} customClassName="nav-icon" />,
   },
+  {
+    component: CNavItem,
+    name: 'Observability',
+    to: '/observability',
+    icon: <CIcon icon={cilDescription} customClassName="nav-icon" />,
+  },
   // {
   //   component: CNavItem,
   //   name: 'DataHub',

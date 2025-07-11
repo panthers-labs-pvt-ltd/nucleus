@@ -55,7 +55,7 @@ const Widgets = React.lazy(() => import('./views/widgets/Widgets'))
 
 //Views
 const CreatePipeline = React.lazy(() => import('./views/pages/pipeline/NewPipeline.tsx'))
-
+const GrafanaDashboard  = React.lazy(() => import('./views/observability/GrafanaDashboard.tsx'))
 //Pages
 const Login = React.lazy(() => import('./views/pages/login/Login'))
 
@@ -107,6 +107,7 @@ const routes = [
   { path: '/notifications/toasts', name: 'Toasts', element: Toasts },
   { path: '/widgets', name: 'Widgets', element: Widgets },
   { path: '/createPipeline',name: 'Create Pipeline', element: CreatePipeline },
+  { path: '/observability',name: 'Grafana Dashboard', element: GrafanaDashboard },
   
 ]
 
