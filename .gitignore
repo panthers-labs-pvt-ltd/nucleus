@@ -6,7 +6,11 @@ package-lock.json
 build
 dist
 
-# cache
+# cache   
 .cache
 *.cache
 cache
+
+.yarn/cache
+.yarn/install-state.gz
+
