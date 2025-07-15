@@ -1,4 +1,16 @@
 node_modules
 yarn.lock
 package-lock.json
+
+# production build
+build
 dist
+
+# cache   
+.cache
+*.cache
+cache
+
+.yarn/cache
+.yarn/install-state.gz
+
